@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
 import { Layout, Col, Row } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { recipes } from "../files/recipes.js";
 import ListRecipe from "../components/Recipe/ListRecipe";
 
-const App = ({ title }) => {
+const App = () => {
 
     const [state, setState] = useState(false);
 
@@ -13,19 +12,14 @@ const App = ({ title }) => {
         setTimeout(() => setState(true), 1000);
     }, []);
 
-    // const renderRecipes = Object.entries(recipes).map(([index, item]) => {
-    //     return (
-    //         <Card className="card" title={index} description={item} />   
-    //     )
-    // });
+    const { Header, Content, Footer } = Layout;
 
-    const { Header, Content } = Layout;
     return (
         <Layout>
             <Header>
                 <Row justify="space-between">
                     <Col style={{color: "#fff"}}>
-                        Recipes
+                        <a id="home" href="#">Recipes Book</a>
                     </Col>
                     <Col>
                         <UserOutlined style={{color: "#fff"}} />
@@ -33,13 +27,21 @@ const App = ({ title }) => {
                 </Row>
             </Header>
             <Content>
-                {/* <div>
-                    <div className="cards-container">
-                        {renderRecipes}
-                    </div>
-                </div> */}
                 <ListRecipe recipes={recipes} />
             </Content>
+            <Footer 
+                style={{ 
+                    borderTop: '1px solid #e8e8e8',
+                    left: 0,
+                    color: '#fff',
+                    bottom: 0,
+                    width: '100%',
+                    backgroundColor: '#001529',
+                    textAlign: 'center'
+                }}
+            >
+                Copyright (c) - Simon DUPERRAY
+            </Footer>
         </Layout>
         
     )

@@ -1,0 +1,28 @@
+.tags-container {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags-container li {
+    background:green;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    display: block;
+    margin: 0 5px;
+    position: relative;
+    width:max-content;
+    padding: 0 10px;
+}
+
+.tags-container li a {
+    color: #56a3d5;
+    display: block;
+    position: absolute;
+}
+
+p#tag-item {
+    margin-bottom: 0;
+}
