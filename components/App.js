@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
-import { Layout, PageHeader, Col, Row } from "antd";
+import { Layout, Col, Row } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { recipes } from "../files/recipes.js";
+import ListRecipe from "../components/Recipe/ListRecipe";
 
 const App = ({ title }) => {
 
@@ -11,20 +13,13 @@ const App = ({ title }) => {
         setTimeout(() => setState(true), 1000);
     }, []);
 
-    const recipes = {
-        "Recette 1": "blablabla",
-        "Recette 2": "blablabla",
-        "Recette 3": "blablabla"
-    };
-
-    const renderRecipes = Object.entries(recipes).map(([index, item]) => {
-        return (
-            <Card className="card" title={index} description={item} />   
-        )
-    });
+    // const renderRecipes = Object.entries(recipes).map(([index, item]) => {
+    //     return (
+    //         <Card className="card" title={index} description={item} />   
+    //     )
+    // });
 
     const { Header, Content } = Layout;
-
     return (
         <Layout>
             <Header>
@@ -38,11 +33,12 @@ const App = ({ title }) => {
                 </Row>
             </Header>
             <Content>
-                <div>
+                {/* <div>
                     <div className="cards-container">
                         {renderRecipes}
                     </div>
-                </div>
+                </div> */}
+                <ListRecipe recipes={recipes} />
             </Content>
         </Layout>
         

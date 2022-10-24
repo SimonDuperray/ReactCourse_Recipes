@@ -1,12 +1,20 @@
 .cards-container {
     display: flex;
     flex-direction: row;
-    width: auto;
+    /* width: 1000px; */
+    color: #fff;
 }
 
 .card { 
     background-color: #02433C;
     margin: 5px;
     padding: 10px;
-    width: 200px;
+    width: 1000px;
+}
+
+.card > h1.title {
+    color: lightgrey;
+}
+.card > p.description {
+    color: #fff;
 }
