@@ -6,9 +6,9 @@
 .card { 
     background-color: lightgray;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 10px;
     flex: 0 1 500px;
-    width: 50%;
+    width: 99%;
 }
 
 .card-title {
@@ -36,4 +36,12 @@ p#details-title {
     text-align: center;
     text-decoration: underline;
     margin-bottom: 10px;
+}
+
+a.recipe-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+a.recipe-title-link:hover {
+    color: inherit;
 }

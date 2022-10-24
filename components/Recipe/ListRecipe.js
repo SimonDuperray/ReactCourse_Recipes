@@ -5,8 +5,9 @@ const ListRecipe = (props) => {
         <div className="cards-container">
             {props.recipes.map(recipe => {
                 return (
-                    <div key={recipe.title}>
-                        <ViewRecipe 
+                    <div key={recipe.id}>
+                        <ViewRecipe
+                            id={recipe.id}
                             title={recipe.title} 
                             instructions={recipe.instructions} 
                             vegetarian={recipe.vegetarian}

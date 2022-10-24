@@ -8,6 +8,7 @@ import {
     HeartFilled
 } from "@ant-design/icons";
 import { useState } from "react";
+import Link from "next/link";
 
 const ViewRecipe = (props) => {
     
@@ -63,7 +64,8 @@ const ViewRecipe = (props) => {
     return (
         <div className="card">
             <h1 className="card-title">
-                {props.title} - {
+                <Link className="recipe-title-link" href={'/recipe/'+props.id} key={props.id}>{props.title}</Link>
+                - {
                     starry=="false" ?
                         <HeartOutlined
                             style={{ color: "#000" }} 
