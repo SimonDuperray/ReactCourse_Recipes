@@ -1,9 +1,15 @@
 import TagItem from "../Tag/TagItem";
+import { 
+    CheckCircleOutlined, 
+    EuroOutlined, 
+    FieldTimeOutlined, 
+    UserOutlined,
+    HeartOutlined,
+    HeartFilled
+} from "@ant-design/icons";
+import { useState } from "react";
 
 const ViewRecipe = (props) => {
-    const parseStrToHTML = (str) => {
-        return parse(str);
-    }
     
     const renderTags = (props) => {
         const isVegetarian = true ? props.vegetarian : false;
@@ -44,13 +50,59 @@ const ViewRecipe = (props) => {
         );
     }
 
+    const toggleStar = (props) => {
+        if(starry=="false") {
+            setStarry("true");
+        } else {
+            setStarry("false");
+        }
+    }
+
+    const [starry, setStarry] = useState("false");
+
     return (
         <div className="card">
-            <h1 className="card-title">{props.title}</h1>
+            <h1 className="card-title">
+                {props.title} - {
+                    starry=="false" ?
+                        <HeartOutlined
+                            style={{ color: "#000" }} 
+                            onClick={toggleStar}
+                        /> : 
+                        <HeartFilled 
+                            style={{ color: "#000" }} 
+                            onClick={toggleStar}
+                        />
+                }
+            </h1>
             <hr />
             <span className="card-description" dangerouslySetInnerHTML={{ __html: props.instructions }}></span>
             <hr />
             { renderTags(props) }
+            <hr />
+            <p id="details-title">And this is some details about the recipe:</p>
+            <div className="details-container">
+                <p>
+                    <CheckCircleOutlined style={{ color: "#000" }} />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {props.healthScore}
+                </p>
+                <p>
+                    <EuroOutlined style={{ color: "#000" }} />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {props.pricePerServing}€
+                </p>
+                <p>
+                    <FieldTimeOutlined style={{ color: '#000' }} />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {props.readyInMinutes} minutes
+                </p>
+                <p>
+                    <UserOutlined style={{ color: "#000" }} />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {props.servings}
+                </p>
+            </div>
         </div>
     );
 };

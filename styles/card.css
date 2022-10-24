@@ -13,9 +13,27 @@
 
 .card-title {
     font-style: italic;
+    letter-spacing: .5px;
 }
 
 .icons-container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-container > p {
+    flex: 0 1 500px;
+    text-align: center;
+    font-size: 17px;
+}
+
+p#details-title {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
 }

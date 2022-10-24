@@ -17,6 +17,7 @@ const ListRecipe = (props) => {
                             ingredients={recipe.ingredients}
                             readyInMinutes={recipe.readyInMinutes}
                             servings={recipe.servings}
+                            starry="false"
                         />
                     </div>
                 );
