@@ -1,0 +1,12 @@
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.card { 
+    background-color: #02433C;
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
