@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Layout, Col, Row } from "antd";
+import { Layout } from "antd";
 import { recipes } from "../files/recipes.js";
 import ListRecipe from "../components/Recipe/ListRecipe";
 import CustomNavBar from "../components/CustomNavBar";
@@ -7,13 +6,7 @@ import CustomFooter from "../components/CustomFooter";
 
 const App = () => {
 
-    const [state, setState] = useState(false);
-
-    useEffect(() => {
-        setTimeout(() => setState(true), 1000);
-    }, []);
-
-    const { Header, Content, Footer } = Layout;
+    const { Content } = Layout;
 
     return (
         <Layout>
