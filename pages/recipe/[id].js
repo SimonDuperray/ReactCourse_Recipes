@@ -1,5 +1,7 @@
 import { recipes } from "../../files/recipes.js";
 import CustomNavBar from "../../components/CustomNavBar";
+import CustomFooter from "../../components/CustomFooter";
+import ViewDetailsRecipe from "../../components/Recipe/ViewDetailsRecipe";
 
 export const getStaticPaths = () => {
     const paths = recipes.map(recipe => {
@@ -35,7 +37,8 @@ const Details = ({ recipe }) => {
     return (
         <div>
             <CustomNavBar />
-            <h1>{recipe.title}</h1>
+            <ViewDetailsRecipe title={recipe.title} />
+            <CustomFooter />
         </div>
     )
 }

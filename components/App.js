@@ -3,6 +3,7 @@ import { Layout, Col, Row } from "antd";
 import { recipes } from "../files/recipes.js";
 import ListRecipe from "../components/Recipe/ListRecipe";
 import CustomNavBar from "../components/CustomNavBar";
+import CustomFooter from "../components/CustomFooter";
 
 const App = () => {
 
@@ -20,19 +21,7 @@ const App = () => {
             <Content>
                 <ListRecipe recipes={recipes} />
             </Content>
-            <Footer 
-                style={{ 
-                    borderTop: '1px solid #e8e8e8',
-                    left: 0,
-                    color: '#fff',
-                    bottom: 0,
-                    width: '100%',
-                    backgroundColor: '#001529',
-                    textAlign: 'center'
-                }}
-            >
-                Copyright (c) - Simon DUPERRAY
-            </Footer>
+            <CustomFooter />
         </Layout>
         
     )
