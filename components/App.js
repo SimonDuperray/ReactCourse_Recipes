@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Layout, Col, Row } from "antd";
-import { UserOutlined } from "@ant-design/icons";
 import { recipes } from "../files/recipes.js";
 import ListRecipe from "../components/Recipe/ListRecipe";
+import CustomNavBar from "../components/CustomNavBar";
 
 const App = () => {
 
@@ -16,16 +16,7 @@ const App = () => {
 
     return (
         <Layout>
-            <Header>
-                <Row justify="space-between">
-                    <Col style={{color: "#fff"}}>
-                        <a id="home" href="#">Recipes Book</a>
-                    </Col>
-                    <Col>
-                        <UserOutlined style={{color: "#fff"}} />
-                    </Col>
-                </Row>
-            </Header>
+            <CustomNavBar />
             <Content>
                 <ListRecipe recipes={recipes} />
             </Content>
