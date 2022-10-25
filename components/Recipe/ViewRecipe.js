@@ -51,7 +51,7 @@ const ViewRecipe = (props) => {
         );
     }
 
-    const toggleStar = (props) => {
+    const toggleStar = () => {
         if(starry=="false") {
             setStarry("true");
         } else {
@@ -69,7 +69,7 @@ const ViewRecipe = (props) => {
                     starry=="false" ?
                         <HeartOutlined
                             style={{ color: "#000" }} 
-                            onClick={toggleStar}
+                            onClick={toggleStar} 
                         /> : 
                         <HeartFilled 
                             style={{ color: "#000" }} 
